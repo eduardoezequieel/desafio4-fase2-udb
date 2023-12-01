@@ -3,8 +3,9 @@
 <html>
 <head>
     <title>Iniciar sesión</title>
-    <link rel="stylesheet" href="resources/login.css">
-
+    <link rel="stylesheet" href="/login.css">
+    <link rel="stylesheet" href="/globals.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
 <body>
     <div class="container">
@@ -16,13 +17,17 @@
             </div>
             <div class="form-item">
                 <label>Contraseña</label>
-                <input type="password" name="password" placeholder="Escribe tu contraseña">
-                <button id="toggle-password">Toggle contraseña</button>
+                <div class="password-container">
+                    <input type="password" name="password" placeholder="Escribe tu contraseña">
+                    <button id="toggle-password"><i class="bi bi-eye-fill"></i></button>
+                </div>
             </div>
         </div>
-        <button class="submit-button" type="button">Continuar</button>
+        <a href="dashboard">
+            <button class="submit-button" type="button">Continuar</button>
+        </a>
     </div>
 
-    <script src="resources/login.js" type="text/javascript"></script>
+    <script src="login.js" type="text/javascript"></script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6,p,span,label {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#logo {
+    color: white;
+}
+
+.form-container {
+    background-color: #F5FBF8;
+    padding: 20px;
+}
+
+.form-label {
+    color: #9AA8B4 !important;
+}
+
+.primary-button {
+    background-color: #52BE7F;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    border: 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.primary-button:hover {
+    background-color: #3b885f;
+}

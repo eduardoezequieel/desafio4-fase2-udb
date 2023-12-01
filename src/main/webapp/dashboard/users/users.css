@@ -1,0 +1,21 @@
+.button-group {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 300px;
+    margin-top: 30px;
+}
+
+#restore-password {
+    grid-column: span 2;
+}
+
+.data-container {
+    display: flex;
+    gap: 20px;
+}
+
+form {
+    width: 500px;
+}

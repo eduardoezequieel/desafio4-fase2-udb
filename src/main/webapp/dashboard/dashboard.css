@@ -1,0 +1,69 @@
+aside {
+    background-color: #41A7DA;
+    width: 250px;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+}
+
+a {
+    width: 100%;
+    text-decoration: none !important;
+}
+
+#top-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+#bottom-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.buttons-container > a > button {
+    background-color: #41A7DA;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.buttons-container > a > button:hover {
+    background-color: #2C8CCF;
+}
+
+i {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.page-container {
+    margin-left: 250px;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.inner-container {
+    width: 100%;
+}
