@@ -5,7 +5,7 @@
             <h3>Libreria</h3>
         </a>
         <div class="buttons-container">
-            <a href="/dashboard/users">
+            <a href="/dashboard/users?action=index">
                 <button type="button">
                     <i class="bi bi-person"></i>
                     <span>Usuarios</span>
