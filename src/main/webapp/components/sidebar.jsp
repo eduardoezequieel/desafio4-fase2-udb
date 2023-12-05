@@ -11,7 +11,7 @@
                     <span>Usuarios</span>
                 </button>
             </a>
-            <a href="">
+            <a href="/dashboard/inventorySelection">
                 <button type="button">
                     <i class="bi bi-archive"></i>
                     <span>Inventario</span>

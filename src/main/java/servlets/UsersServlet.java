@@ -22,6 +22,10 @@ public class UsersServlet extends HttpServlet {
         List<UserType> userTypes = controller.getUserTypes();
         List<User> users = controller.getUsers();
 
+        for (User user : users) {
+            System.out.println(user.getEmail());
+        }
+
         req.setAttribute("userTypes", userTypes);
         req.setAttribute("users", users);
 
@@ -48,10 +52,12 @@ public class UsersServlet extends HttpServlet {
                 break;
             case "create":
                 req.setAttribute("mode", "add");
+                req.setAttribute("title", "Crear usuario");
                 req.getRequestDispatcher("/dashboard/users/form.jsp").forward(req, resp);
                 break;
             case "edit":
                 req.setAttribute("mode", "edit");
+                req.setAttribute("title", "Editar usuario");
                 String code = req.getParameter("code");
 
                 User foundUser = null;

@@ -19,6 +19,7 @@
                 %>
                 <input type="hidden" name="mode" value="<%=request.getAttribute("mode")%>">
                 <input type="hidden" name="userId" value="<%=user != null ? user.getIdentificationCode() : ""%>">
+                <h2 class="text-center mb-2"><%=request.getAttribute("title")%></h2>
                 <div class="form-container">
                     <div class="mb-3">
                         <label for="txtIdentification" class="form-label">Código de identificación</label>
@@ -73,6 +74,9 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary mt-4">Guardar cambios</button>
+                <a href="/dashboard/users?action=index">
+                    <button type="button" class="btn btn-secondary mt-4">Regresar</button>
+                </a>
             </form>
         </div>
     </div>
