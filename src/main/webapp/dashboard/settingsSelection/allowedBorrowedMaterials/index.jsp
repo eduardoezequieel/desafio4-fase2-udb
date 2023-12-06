@@ -39,7 +39,6 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">User Type</th>
                                 <th scope="col">Allowed to Borrow Materials</th>
                             </tr>
