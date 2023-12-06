@@ -1,0 +1,25 @@
+.selection-button {
+    background-color: #41A7DA;
+    color: white;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    width: 220px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.selection-button:hover {
+    background-color: #2E8BC0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    gap: 20px;
+    justify-content: center;
+}

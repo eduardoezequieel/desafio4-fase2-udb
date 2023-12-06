@@ -37,7 +37,7 @@
             <p>Administrador</p>
         </div>
         <div class="buttons-container">
-            <a href="/dashboard/settings">
+            <a href="/dashboard/settingsSelection">
                 <button type="button">
                     <i class="bi bi-gear"></i>
                     <span>Configuración</span>
