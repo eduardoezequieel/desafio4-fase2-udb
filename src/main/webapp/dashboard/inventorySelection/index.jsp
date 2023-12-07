@@ -14,7 +14,7 @@
                 <a href="${pageContext.request.contextPath}/dashboard/inventorySelection/baseMaterial?action=index">
                     <button type="button" class="selection-button">Material base</button>
                 </a>
-                <a href="">
+                <a href="${pageContext.request.contextPath}/dashboard/inventorySelection/inventory?action=index">
                     <button type="button" class="selection-button">Inventario</button>
                 </a>
                 <a href="">

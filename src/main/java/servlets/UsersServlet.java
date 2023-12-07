@@ -22,10 +22,6 @@ public class UsersServlet extends HttpServlet {
         List<UserType> userTypes = controller.getUserTypes();
         List<User> users = controller.getUsers();
 
-        for (User user : users) {
-            System.out.println(user.getEmail());
-        }
-
         req.setAttribute("userTypes", userTypes);
         req.setAttribute("users", users);
 

@@ -17,12 +17,14 @@
                     Inventory inventory = (Inventory) request.getAttribute("inventory");
                 %>
                 <input type="hidden" name="code" value="<%=inventory != null ? inventory.getInventoryId() : ""%>">
-                <h2 class="text-center mb-2"><%=request.getAttribute("title")%></h2>
+                <h2 class="text-center mb-2"><%=request.getAttribute("title")%>
+                </h2>
                 <input type="hidden" name="mode" value="<%=request.getAttribute("mode")%>">
                 <div class="form-container">
                     <div class="mb-3">
                         <label for="cbMaterial" class="form-label">Material</label>
-                        <select class="form-select" name="material" id="cbMaterial" <%=request.getAttribute("mode").equals("edit") ? "disabled" : ""%>>
+                        <select class="form-select" name="material"
+                                id="cbMaterial" <%=request.getAttribute("mode").equals("edit") ? "disabled" : ""%>>
                             <option value="">Selecciona un material</option>
                             <%
                                 List<Material> materials = (List<Material>) request.getAttribute("materials");
@@ -32,7 +34,8 @@
                                 for (Material material : materials) {
                                     boolean isSelected = material.getCode().equals(selectedMaterialCode);
                             %>
-                            <option value="<%= material.getCode() %>" <%= isSelected ? "selected" : "" %> material-type="<%=material.getMaterialTypeName()%>"><%= material.getTitle() %>
+                            <option value="<%= material.getCode() %>" <%= isSelected ? "selected" : "" %>
+                                    material-type="<%=material.getMaterialTypeName()%>"><%= material.getTitle() %>
                             </option>
                             <%
                                 }
@@ -41,7 +44,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="cbMaterial" class="form-label">Librería</label>
-                        <select class="form-select" name="library" id="cbLibrary" <%=request.getAttribute("mode").equals("edit") ? "disabled" : ""%>>
+                        <select class="form-select" name="library"
+                                id="cbLibrary" <%=request.getAttribute("mode").equals("edit") ? "disabled" : ""%>>
                             <option value="">Selecciona una librería</option>
                             <%
                                 List<Library> libraries = (List<Library>) request.getAttribute("libraries");
@@ -60,16 +64,17 @@
                     </div>
                     <div class="mb-3">
                         <label for="txtNotes" class="form-label">Notas</label>
-                        <textarea name="notes" rows="5" class="form-control" id="txtNotes" required><%=inventory != null ? inventory.getNotes().trim() : ""%></textarea>
+                        <textarea name="notes" rows="5" class="form-control" id="txtNotes"
+                                  required><%=inventory != null ? inventory.getNotes().trim() : ""%></textarea>
                     </div>
                     <div>
-                        <div class="mb-3">
+                        <div class="mb-3" id="issn-container">
                             <label for="txtIssn" class="form-label">ISSN</label>
-                            <input type="text" class="form-control" id="txtIssn" required name="issn">
+                            <input type="text" class="form-control" id="txtIssn" name="issn">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" id="isbn-container">
                             <label for="txtIsbn" class="form-label">ISBN</label>
-                            <input type="text" class="form-control" id="txtIsbn" required name="issn">
+                            <input type="text" class="form-control" id="txtIsbn" name="issn">
                         </div>
                     </div>
                 </div>
