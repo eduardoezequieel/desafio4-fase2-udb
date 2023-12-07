@@ -1,5 +1,4 @@
 <%@ page import="java.util.List" %>
-<%@ page import="models.User" %>
 <%@ page import="models.Material" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>

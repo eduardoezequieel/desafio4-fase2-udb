@@ -76,6 +76,22 @@ public class Inventory {
     
     private int inventoryId;
     private String materialCode;
+
+    @Override
+    public String toString() {
+        return "Inventory{" +
+                "inventoryId=" + inventoryId +
+                ", materialCode='" + materialCode + '\'' +
+                ", title='" + title + '\'' +
+                ", libraryName='" + libraryName + '\'' +
+                ", materialTypeName='" + materialTypeName + '\'' +
+                ", libraryId=" + libraryId +
+                ", notes='" + notes + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", issn='" + issn + '\'' +
+                '}';
+    }
+
     private String title;
     private String libraryName;
     private String materialTypeName;
