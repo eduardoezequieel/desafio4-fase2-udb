@@ -17,7 +17,7 @@
                     <span>Inventario</span>
                 </button>
             </a>
-            <a href="">
+            <a href="/dashboard/loan?action=index">
                 <button type="button">
                     <i class="bi bi-coin"></i>
                     <span>Prestamos</span>
