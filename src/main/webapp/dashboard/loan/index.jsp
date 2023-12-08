@@ -50,6 +50,7 @@
                 </div>
                 <form action="/dashboard/loan" class="px-3" method="post">
                     <h5 class="text-center">Detalle del prestamo</h5>
+                    <input type="text" class="d-none" id="txtEmail" name="email">
                     <div class="mb-3">
                         <label for="startDate">Fecha de inicio</label>
                         <input required type="date" class="form-control" name="startDate" id="startDate">
