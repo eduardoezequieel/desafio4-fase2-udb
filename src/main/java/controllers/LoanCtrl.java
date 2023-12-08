@@ -1,4 +1,4 @@
-/*package controllers;
+package controllers;
 
 import helpers.DatabaseConnection;
 import java.sql.Connection;
@@ -136,7 +136,7 @@ public class LoanCtrl {
             pst.close();
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Sucedio un error al verificar si el material está en un préstamo activo. Por favor contacta con el administrador.");
+            System.out.println(e.getMessage());
             response = -1;
         }
 
@@ -239,7 +239,7 @@ public class LoanCtrl {
         return response;
     }
     
-    public boolean approveLoan(int loanId) {
+    public boolean approveLoan(int loanId, String identificationCode) {
         boolean response = false;
         
         try {
@@ -250,7 +250,7 @@ public class LoanCtrl {
             
             PreparedStatement pst = cn.prepareStatement(sql);
             
-            pst.setString(1, ApplicationContext.getUser().getIdentificationCode());
+            pst.setString(1, identificationCode);
             pst.setInt(2, loanId);
             
             System.out.println(pst.toString());
@@ -450,4 +450,3 @@ public class LoanCtrl {
         return response;
     }
 }
-*/

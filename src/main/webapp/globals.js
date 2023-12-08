@@ -39,6 +39,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const role = user[5].substring(15)
             .replace(/'/g, '')
             .replace(/"/g, '');
+
+        const email = user[3].substring(8)
+            .replace(/'/g, '')
+            .replace(/"/g, '');
+        
+        localStorage.setItem('allowedMaterials', user[8].substring(26, 27));
+        localStorage.setItem('email', email);
         
         const nameElement = document.querySelector('#username-lbl');
         const roleElement = document.querySelector('#role-lbl');

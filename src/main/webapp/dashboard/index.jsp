@@ -8,7 +8,9 @@
 <main>
     <%@ include file="/components/sidebar.jsp" %>
     <div class="page-container">
-        <h1>Esta es mi pagina dashboard</h1>
+        <div class="inner-container" style="display: flex; justify-content: center; align-items: center;">
+            <h3 class="welcome-message">Bienvenido, espero que tengas un día productivo.</h3>
+        </div>
     </div>
     <%@ include file="/components/scripts.jsp" %>
 </main>

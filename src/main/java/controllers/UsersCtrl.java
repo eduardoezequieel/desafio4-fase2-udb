@@ -302,6 +302,7 @@ public class UsersCtrl {
                 user.setEmail(rs.getString("email"));
                 user.setUserTypeName(rs.getString("userTypeName"));
                 user.setName(rs.getString("name"));
+                user.setAllowedBorrowedMaterials(rs.getInt("allowedBorrowedMaterials"));
             }
 
             cn.close();

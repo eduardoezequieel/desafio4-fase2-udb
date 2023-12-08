@@ -36,9 +36,24 @@ tableButtons.forEach((button) => {
 
 document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
+
+    document.querySelector('#txtEmail').value = localStorage.getItem('email');
     
-    const selectedMaterials = Array.from(document.querySelectorAll('#selected-materials-container > div > button'))
-        .map((button) => button.getAttribute('data-inventory-id')).join(','); 
+    const addedMaterials = Array.from(document.querySelectorAll('#selected-materials-container > div > button'));
+    const allowedMaterials = parseInt(localStorage.getItem('allowedMaterials'));
+    const role = document.querySelector('#role-lbl').textContent;
+    
+    if (addedMaterials.length === 0) {
+        alert('Debe seleccionar al menos un elemento para el prestamo.');
+        return;
+    }
+    
+    if (addedMaterials.length > allowedMaterials && role !== 'Administrador') {
+        alert(`No puedes seleccionar más elementos de los permitidos. (${allowedMaterials})`);
+        return;
+    }
+    
+    const selectedMaterials = addedMaterials.map((button) => button.getAttribute('data-inventory-id')).join(','); 
     
     const input = document.querySelector('#selected-materials');
     input.value = selectedMaterials;

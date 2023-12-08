@@ -47,6 +47,10 @@ a {
     width: 100%;
 }
 
+.welcome-message {
+    color: #41A7DA;
+}
+
 .buttons-container > a > button:hover, .buttons-container > button:hover {
     background-color: #2C8CCF;
 }

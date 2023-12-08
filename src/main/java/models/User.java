@@ -1,6 +1,7 @@
 package models;
 
 public class User {
+
     @Override
     public String toString() {
         return "User{" +
@@ -12,6 +13,7 @@ public class User {
                 ", userTypeName='" + userTypeName + '\'' +
                 ", hasToResetPassword=" + hasToResetPassword +
                 ", phone='" + phone + '\'' +
+                ", allowedBorrowedMaterials=" + allowedBorrowedMaterials +
                 '}';
     }
 
@@ -23,6 +25,15 @@ public class User {
     private String userTypeName;
     private boolean hasToResetPassword;
     private String phone;
+    private int allowedBorrowedMaterials;
+
+    public int getAllowedBorrowedMaterials() {
+        return allowedBorrowedMaterials;
+    }
+
+    public void setAllowedBorrowedMaterials(int allowedBorrowedMaterials) {
+        this.allowedBorrowedMaterials = allowedBorrowedMaterials;
+    }
 
     public String getIdentificationCode() {
         return identificationCode;

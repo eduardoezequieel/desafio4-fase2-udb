@@ -3,6 +3,7 @@
     <div id="top-sidebar">
         <a id="logo" href="/dashboard">
             <h3>Libreria</h3>
+            <input type="text" class="d-none" id="allowedBorrowedMaterials"/>
         </a>
         <div class="buttons-container">
             <a href="/dashboard/users?action=index" class="d-none">
