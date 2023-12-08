@@ -24,7 +24,7 @@
                     <span>Prestamos</span>
                 </button>
             </a>
-            <a href="" class="d-none">
+            <a href="/dashboard/return?action=index" class="d-none">
                 <button type="button">
                     <i class="bi bi-person-raised-hand"></i>
                     <span>Devoluciones</span>

@@ -73,15 +73,31 @@ public class Material {
     public void setEditorialId(int editorialId) {
         this.editorialId = editorialId;
     }
-    
+
     public String getMaterialTypeName() {
         return materialTypeName;
+    }
+
+    public int getInventoryId() {
+        return inventoryId;
+    }
+
+    public void setInventoryId(int inventoryId) {
+        this.inventoryId = inventoryId;
+    }
+
+    public String getLibraryName() {
+        return libraryName;
+    }
+
+    public void setLibraryName(String libraryName) {
+        this.libraryName = libraryName;
     }
 
     public void setMaterialTypeName(String materialTypeName) {
         this.materialTypeName = materialTypeName;
     }
-    
+
     private String code;
     private String title;
     private String description;
@@ -103,10 +119,12 @@ public class Material {
     }
 
     private String duration;
+    private int inventoryId;
     private int songNumber;
     private String publishDate;
     private int materialTypeId;
     private int creatorId;
     private int editorialId;
     private String materialTypeName;
+    private String libraryName;
 }
