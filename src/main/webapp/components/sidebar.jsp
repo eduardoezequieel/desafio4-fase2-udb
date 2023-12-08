@@ -5,25 +5,25 @@
             <h3>Libreria</h3>
         </a>
         <div class="buttons-container">
-            <a href="/dashboard/users?action=index">
+            <a href="/dashboard/users?action=index" class="d-none">
                 <button type="button">
                     <i class="bi bi-person"></i>
                     <span>Usuarios</span>
                 </button>
             </a>
-            <a href="/dashboard/inventorySelection">
+            <a href="/dashboard/inventorySelection" class="d-none">
                 <button type="button">
                     <i class="bi bi-archive"></i>
                     <span>Inventario</span>
                 </button>
             </a>
-            <a href="/dashboard/loan?action=index">
+            <a href="/dashboard/loan?action=index" class="d-none">
                 <button type="button">
                     <i class="bi bi-coin"></i>
                     <span>Prestamos</span>
                 </button>
             </a>
-            <a href="">
+            <a href="" class="d-none">
                 <button type="button">
                     <i class="bi bi-person-raised-hand"></i>
                     <span>Devoluciones</span>
@@ -33,8 +33,8 @@
     </div>
     <div id="bottom-sidebar">
         <div class="user-info">
-            <h4>Eduardo López</h4>
-            <p>Administrador</p>
+            <h4 id="username-lbl"></h4>
+            <p id="role-lbl"></p>
         </div>
         <div class="buttons-container">
             <a href="/dashboard/settingsSelection">
@@ -43,12 +43,10 @@
                     <span>Configuración</span>
                 </button>
             </a>
-            <a href="">
-                <button type="button">
-                    <i class="bi bi-box-arrow-left"></i>
-                    <span>Cerrar sesión</span>
-                </button>
-            </a>
+            <button type="button" onclick="logout()">
+                <i class="bi bi-box-arrow-left"></i>
+                <span>Cerrar sesión</span>
+            </button>
         </div>
     </div>
 </aside>

@@ -41,6 +41,12 @@ h5 {
     gap: 15px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .form-item {
     display: flex;
     flex-direction: column;
@@ -70,6 +76,7 @@ h5 {
     border: 0;
     cursor: pointer;
     width: 100px;
+    align-self: flex-end;
 }
 
 .submit-button:hover {

@@ -43,5 +43,18 @@ document.querySelector('form').addEventListener('submit', (e) => {
     const input = document.querySelector('#selected-materials');
     input.value = selectedMaterials;
     
+    const startDate = document.querySelector('#startDate').value;
+    const endDate = document.querySelector('#endDate').value;
+    
+    if (endDate && startDate) {
+        const startDateObj = new Date(startDate);
+        const endDateObj = new Date(endDate);
+        
+        if (endDateObj < startDateObj) {
+            alert('La fecha de finalización del prestamo no puede ser menor a la fecha de prestamo.');
+            return;
+        }
+    }
+    
     e.target.submit();
 });

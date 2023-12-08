@@ -1,6 +1,20 @@
 package models;
 
 public class User {
+    @Override
+    public String toString() {
+        return "User{" +
+                "identificationCode='" + identificationCode + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", userTypeId=" + userTypeId +
+                ", userTypeName='" + userTypeName + '\'' +
+                ", hasToResetPassword=" + hasToResetPassword +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
+
     private String identificationCode;
     private String password;
     private String name;

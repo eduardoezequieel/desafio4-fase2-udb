@@ -27,12 +27,19 @@ public class LoanServlet extends HttpServlet {
             case "index":
                 req.getRequestDispatcher("/dashboard/loan/index.jsp").forward(req, resp);
                 break;
+            default:
+                req.getRequestDispatcher("/dashboard/loan/index.jsp").forward(req, resp);
+                break;
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String selectedMaterials = req.getParameter("selectedMaterials");
-        System.out.println(selectedMaterials);
+        String selectedMaterials = req.getParameter("selectedMaterials"),
+                startDate = req.getParameter("startDate"),
+                endDate = req.getParameter("endDate");
+        System.out.println(selectedMaterials + " " + startDate + " " + endDate);
+        
+        req.getRequestDispatcher("/dashboard/loan/index.jsp").forward(req, resp);
     }
 }

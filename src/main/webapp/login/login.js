@@ -1,4 +1,5 @@
 const buttonPassword = document.querySelector('#toggle-password');
+const form = document.querySelector('form');
 
 buttonPassword.addEventListener('click', function () {
     const input = document.querySelector('input[name="password"]');
@@ -11,4 +12,8 @@ buttonPassword.addEventListener('click', function () {
         button.innerHTML = '<i class="bi bi-eye-fill"></i>';
         input.type = "password";
     }
-})
+});
+
+form.addEventListener('submit', (e) => {
+    
+});

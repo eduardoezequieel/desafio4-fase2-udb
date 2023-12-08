@@ -34,7 +34,7 @@ a {
     padding: 10px;
 }
 
-.buttons-container > a > button {
+.buttons-container > a > button, .buttons-container > button {
     background-color: #41A7DA;
     color: white;
     border: none;
@@ -47,7 +47,7 @@ a {
     width: 100%;
 }
 
-.buttons-container > a > button:hover {
+.buttons-container > a > button:hover, .buttons-container > button:hover {
     background-color: #2C8CCF;
 }
 
