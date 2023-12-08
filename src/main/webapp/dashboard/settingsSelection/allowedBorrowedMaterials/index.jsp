@@ -16,12 +16,19 @@
             <div class="data-container1" style="display: flex; center: space-between;">
                 <form class="form-container" style="margin: 15px">
                     <div>
-                        <label for="formGroupExampleInput" class="form-label">Tipo de Usuario</label>
-                        <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                        <label for="userTypeSelect" class="form-label">Tipo de Usuario</label>
+                        <select class="form-select form-select-lg mb-3" aria-label="Large select example"
+                                id="userTypeSelect">
                             <option selected>Seleccione un tipo de Usuario</option>
-                            <option value="1">Seleccione un tipo de Usuario</option>
-                            <option value="2">Profesor</option>
-                            <option value="3">Estudiante</option>
+                            <%
+                                List<UserType> userTypesNamesList = (List<UserType>) request.getAttribute("twoUserTypes");
+                                for (UserType userType : userTypesNamesList) {
+                            %>
+                            <option value="<%= userType.getUserTypeId() %>"><%= userType.getUserTypeName() %>
+                            </option>
+                            <%
+                                }
+                            %>
                         </select>
                     </div>
                     <div>
@@ -48,7 +55,6 @@
                             </thead>
                             <tbody>
                             <%
-                                List<UserType> userTypesNamesList = (List<UserType>) request.getAttribute("twoUserTypes");
                                 for (UserType userType : userTypesNamesList) {
                             %>
                             <tr id="row-<%=userType.getUserTypeName()%>">
