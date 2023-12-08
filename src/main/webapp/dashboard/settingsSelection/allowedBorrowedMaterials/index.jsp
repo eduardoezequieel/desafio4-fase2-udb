@@ -10,10 +10,11 @@
 <body>
 <main>
     <%@ include file="/components/sidebar.jsp" %>
-    <div class="page-container">
+    <div class="page-container"
+         style="display: flex; flex-direction: column; align-items: center;  justify-content: center; height: 100vh;">
         <div class="inner-container1">
-            <div class="data-container1">
-                <form class="form-container">
+            <div class="data-container1" style="display: flex; center: space-between;">
+                <form class="form-container" style="margin: 15px">
                     <div>
                         <label for="formGroupExampleInput" class="form-label">Tipo de Usuario</label>
                         <select class="form-select form-select-lg mb-3" aria-label="Large select example">
@@ -26,9 +27,10 @@
                     <div>
                         <label for="formGroupExampleInput" class="form-label">Cantidad de Libros que puede
                             prestar</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder=""
+                               style="margin: 20px 0">
                     </div>
-                    <div class="btnUpdate">
+                    <div class="btnUpdate" style="width: 50%">
                         <button class="primary-button" type="button">Actualizar</button>
                     </div>
 
@@ -36,14 +38,30 @@
 
                 <div>
                     <div>
-                        <table class="table">
+                        <table class="table" id="usertype-table">
                             <thead>
                             <tr>
-                                <th scope="col">User Type</th>
-                                <th scope="col">Allowed to Borrow Materials</th>
+                                <th scope="col">Tipo de usuario</th>
+                                <th scope="col">Cantidad de Materiales que puede prestar</th>
+
                             </tr>
                             </thead>
                             <tbody>
+                            <%
+                                List<UserType> userTypesNamesList = (List<UserType>) request.getAttribute("twoUserTypes");
+                                for (UserType userType : userTypesNamesList) {
+                            %>
+                            <tr id="row-<%=userType.getUserTypeName()%>">
+                                <th scope="row"><%= userType.getUserTypeName() %>
+                                </th>
+                                <td><%= userType.getAllowedBorrowedMaterials() %>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <%
+                                }
+                            %>
 
                             </tbody>
                         </table>

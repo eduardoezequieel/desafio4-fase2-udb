@@ -4,6 +4,8 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/dashboard/settings/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp/dashboard/settings" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/dashboard/settingsSelection/allowedBorrowedMaterials/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp/dashboard/settingsSelection/allowedBorrowedMaterials" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/dashboard/settingsSelection/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp/dashboard/settingsSelection" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/dashboard/settingsSelection/yearlyOverdue/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp/dashboard/settingsSelection/yearlyOverdue" />
       </map>
     </option>
