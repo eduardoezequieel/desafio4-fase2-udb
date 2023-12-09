@@ -86,7 +86,7 @@ public class UsersServlet extends HttpServlet {
         String name = req.getParameter("name"),
                 email = req.getParameter("email"),
                 password = req.getParameter("password"),
-                identificationCode = req.getParameter("userId"),
+                identificationCode = req.getParameter("identificationCode"),
                 phone = req.getParameter("phone");
 
         int userType = Integer.parseInt(req.getParameter("userType"));
