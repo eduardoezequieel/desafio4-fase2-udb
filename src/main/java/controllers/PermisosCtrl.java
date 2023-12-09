@@ -13,7 +13,7 @@ import java.util.List;
 public class PermisosCtrl {
     public PermisosCtrl() {
     }
-    
+
     public List<UserType> getTwoUsergetTypes() {
         List<UserType> twoUserTypes = new ArrayList<>();
 
@@ -95,13 +95,10 @@ public class PermisosCtrl {
             pstmt.setInt(1, nuevosMateriales);
             pstmt.setString(2, userTypeName);
 
+            System.out.println(pstmt.toString());
+
             int filasActualizadas = pstmt.executeUpdate();
 
-            if (filasActualizadas > 0) {
-                JOptionPane.showMessageDialog(null, "Actualización exitosa.");
-            } else {
-                JOptionPane.showMessageDialog(null, "No se pudo actualizar el registro.");
-            }
 
             cn.close();
             pstmt.close();
@@ -195,12 +192,6 @@ public class PermisosCtrl {
                 pstmt.setString(2, year);
 
                 int filasActualizadas = pstmt.executeUpdate();
-
-                if (filasActualizadas > 0) {
-                    JOptionPane.showMessageDialog(null, "Actualización exitosa.");
-                } else {
-                    JOptionPane.showMessageDialog(null, "No se pudo actualizar el registro.");
-                }
             }
 
             cn.close();

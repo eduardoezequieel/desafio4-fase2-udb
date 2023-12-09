@@ -14,35 +14,6 @@
          style="display: flex; flex-direction: column; align-items: center;  justify-content: center; height: 100vh;">
         <div class="inner-container1">
             <div class="data-container1" style="display: flex; center: space-between;">
-                <form class="form-container" style="margin: 15px">
-                    <div>
-                        <label for="userTypeSelect" class="form-label">Tipo de Usuario</label>
-                        <select class="form-select form-select-lg mb-3" aria-label="Large select example"
-                                id="userTypeSelect">
-                            <option selected>Seleccione un tipo de Usuario</option>
-                            <%
-                                List<UserType> userTypesNamesList = (List<UserType>) request.getAttribute("twoUserTypes");
-                                for (UserType userType : userTypesNamesList) {
-                            %>
-                            <option value="<%= userType.getUserTypeId() %>"><%= userType.getUserTypeName() %>
-                            </option>
-                            <%
-                                }
-                            %>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="formGroupExampleInput" class="form-label">Cantidad de Libros que puede
-                            prestar</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder=""
-                               style="margin: 20px 0">
-                    </div>
-                    <div class="btnUpdate" style="width: 50%">
-                        <button class="primary-button" type="button">Actualizar</button>
-                    </div>
-
-                </form>
-
                 <div>
                     <div>
                         <table class="table" id="usertype-table">
@@ -50,11 +21,13 @@
                             <tr>
                                 <th scope="col">Tipo de usuario</th>
                                 <th scope="col">Cantidad de Materiales que puede prestar</th>
+                                <th scope="col">Acciones</th>
 
                             </tr>
                             </thead>
                             <tbody>
                             <%
+                                List<UserType> userTypesNamesList = (List<UserType>) request.getAttribute("twoUserTypes");
                                 for (UserType userType : userTypesNamesList) {
                             %>
                             <tr id="row-<%=userType.getUserTypeName()%>">
@@ -63,6 +36,10 @@
                                 <td><%= userType.getAllowedBorrowedMaterials() %>
                                 </td>
                                 <td>
+                                    <a href="/dashboard/settingsSelection/allowedBorrowedMaterials?action=edit&userTypeName=<%=userType.getUserTypeName()%>&allowedBorrowedMaterials=<%=userType.getAllowedBorrowedMaterials()%>">
+                                        <button class="primary-button" type="button">Actualizar</button>
+                                    </a>
+
                                 </td>
                             </tr>
                             <%

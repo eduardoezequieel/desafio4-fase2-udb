@@ -16,23 +16,6 @@
             <div class="inner-container1"
                  style="display: flex; flex-direction: column; align-items: center;  justify-content: center; height: 100vh;">
                 <div class="data-container2" style="display: flex; center: space-between;width: 100% ; padding: 50px;">
-                    <form class="form-container" style="margin: 15px">
-                        <div>
-                            <label for="formGroupExampleInput2" class="form-label">Año</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
-                        </div>
-                        <div>
-                            <label for="formGroupExampleInput3" class="form-label"
-                                   style="margin-top: 25px">Tarifa</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput3" placeholder=""
-                                   style="margin-bottom: 20px; ">
-                        </div>
-                        <div class="btnUpdate" style="width: 50%">
-                            <button class="primary-button" type="button">Actualizar</button>
-                        </div>
-                    </form>
-
-
                     <div>
                         <table class="table" id="usertype-table">
                             <thead>
@@ -46,14 +29,20 @@
                             <%
                                 List<Object[]> resultsList = (List<Object[]>) request.getAttribute("results");
                                 for (Object[] result : resultsList) {
-                                    String year = result[0].toString();
-                                    String cost = result[1].toString();
+                                    String cost = result[0].toString();
+                                    String year = result[1].toString().substring(0, 4);
 
                             %>
-                            <tr id="row-<%=year%>">
-                                <td><%= year %>
-                                </td>
+                            <tr>
+                                <th scope="row"><%= year %>
+                                </th>
                                 <td><%= cost %>
+                                </td>
+                                <td>
+                                    <a href="/dashboard/settingsSelection/yearlyOverdue?action=edit&year=<%=year%>&cost=<%=cost%>">
+                                        <button class="primary-button" type="button">Actualizar</button>
+                                    </a>
+
                                 </td>
                             </tr>
                             <%
