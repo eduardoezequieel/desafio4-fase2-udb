@@ -87,7 +87,8 @@ public class UsersServlet extends HttpServlet {
                 email = req.getParameter("email"),
                 password = req.getParameter("password"),
                 identificationCode = req.getParameter("identificationCode"),
-                phone = req.getParameter("phone");
+                phone = req.getParameter("phone"),
+                userId = req.getParameter("userId");
 
         int userType = Integer.parseInt(req.getParameter("userType"));
 
@@ -117,7 +118,7 @@ public class UsersServlet extends HttpServlet {
 
             req.getRequestDispatcher("/components/message.jsp").forward(req, resp);
         } else {
-            boolean ok = controller.updateUser(user, user.getIdentificationCode());
+            boolean ok = controller.updateUser(user, userId);
 
             if (ok) {
                 req.setAttribute("message", "Usuario actualizado correctamente");

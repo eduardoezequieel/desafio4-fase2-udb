@@ -18,6 +18,7 @@
                     User user = (User) request.getAttribute("user");
                 %>
                 <input type="hidden" name="mode" value="<%=request.getAttribute("mode")%>">
+                <input type="hidden" name="userId" value="<%=user != null ? user.getIdentificationCode() : ""%>">
                 <h2 class="text-center mb-2"><%=request.getAttribute("title")%>
                 </h2>
                 <div class="form-container">
