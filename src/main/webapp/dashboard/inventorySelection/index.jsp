@@ -17,7 +17,7 @@
                 <a href="${pageContext.request.contextPath}/dashboard/inventorySelection/inventory?action=index">
                     <button type="button" class="selection-button">Inventario</button>
                 </a>
-                <a href="">
+                <a href="${pageContext.request.contextPath}/dashboard/inventorySelection/creator?action=index">
                     <button type="button" class="selection-button">Creadores</button>
                 </a>
                 <a href="${pageContext.request.contextPath}/dashboard/inventorySelection/editorials?action=index">

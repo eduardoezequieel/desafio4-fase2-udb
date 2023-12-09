@@ -44,6 +44,7 @@ public class EditorialCtrl {
             System.out.println(e.getMessage());
         }
 
+
         return editorials;
     }
 
