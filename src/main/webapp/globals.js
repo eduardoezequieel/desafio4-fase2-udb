@@ -10,7 +10,7 @@ function getCookie(cname) {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
     let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
+    for (let i = 0; i < ca.length; i++) {
         let c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
@@ -27,10 +27,10 @@ function logout() {
     window.location.href = '/login';
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', () => {
     const user = getCookie('user_library').split(',');
     const isOnDashboardSite = window.location.href.includes('dashboard');
-    
+
     if (isOnDashboardSite && user.length > 1) {
         const name = user[2].substring(6)
             .replace(/'/g, '')
@@ -43,27 +43,28 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const email = user[3].substring(8)
             .replace(/'/g, '')
             .replace(/"/g, '');
-        
+
+        localStorage.setItem('id', user[0].substring(25, 33));
         localStorage.setItem('allowedMaterials', user[8].substring(26, 27));
         localStorage.setItem('email', email);
-        
+
         const nameElement = document.querySelector('#username-lbl');
         const roleElement = document.querySelector('#role-lbl');
-        
+
         nameElement.innerHTML = name;
         roleElement.innerHTML = role;
-        
+
         const sidebarButtons = document.querySelectorAll('.buttons-container > .d-none');
-        
+
         const [users, inventory, loans, returns] = sidebarButtons;
-        
+
         if (role === 'Administrador') {
             sidebarButtons.forEach(button => button.classList.remove('d-none'));
         } else {
             loans.classList.remove('d-none');
         }
-        
-        
+
+
     } else if (isOnDashboardSite) {
         window.location.href = '/login';
     }

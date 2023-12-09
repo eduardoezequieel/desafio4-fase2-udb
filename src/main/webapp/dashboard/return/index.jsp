@@ -39,7 +39,7 @@
                         </th>
                         <td><%= loan.getLoanStateName() %>
                         </td>
-                        <td><%= loan.getResponsable() %>
+                        <td><%= loan.getResponsable().isEmpty() ? "Pendiente" : loan.getResponsable() %>
                         </td>
                         <td><%= loan.getAdmin() %>
                         </td>
@@ -57,8 +57,9 @@
                                 <button class="btn btn-primary btn-sm">Ver detalle</button>
                             </a>
                             <a style="width: min-content"
+                               id="approve-anchor"
                                class="<%=loan.getLoanStateName().equals("Pendiente de aprobación") ? "" : "d-none"%> <%=loan.getLoanStateName().equals("Finalizado") ? "d-none" : ""%>"
-                               href="/dashboard/return?action=details&id=<%=loan.getLoanId()%>">
+                               href="/dashboard/return?action=approve&id=<%=loan.getLoanId()%>">
                                 <button class="btn btn-primary btn-sm">Aprobar</button>
                             </a>
                             <a style="width: min-content"
@@ -81,6 +82,7 @@
             initDataTable("material-table")
         });
     </script>
+    <script type="text/javascript" src="return/return.js"></script>
     <%@ include file="/components/scripts.jsp" %>
 </main>
 </body>

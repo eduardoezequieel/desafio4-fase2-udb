@@ -92,6 +92,8 @@ public class ReturnServlet extends HttpServlet {
                 loanId = Integer.parseInt(req.getParameter("id"));
                 String code = req.getParameter("code");
 
+                System.out.println(code);
+
                 boolean approved = loanCtrl.approveLoan(loanId, code);
 
                 if (approved) {

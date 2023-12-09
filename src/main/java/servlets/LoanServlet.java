@@ -13,7 +13,6 @@ import models.Loan;
 import models.User;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,11 +23,11 @@ public class LoanServlet extends HttpServlet {
         String action = req.getParameter("action");
 
         InventoryCtrl inventoryCtrl = new InventoryCtrl();
-        
+
         List<Inventory> inventoryList = inventoryCtrl.getInventory();
-        
+
         req.setAttribute("inventoryList", inventoryList);
-        
+
         switch (action) {
             case "index":
                 req.getRequestDispatcher("/dashboard/loan/index.jsp").forward(req, resp);
@@ -45,7 +44,9 @@ public class LoanServlet extends HttpServlet {
                 startDate = req.getParameter("startDate"),
                 endDate = req.getParameter("endDate"),
                 email = req.getParameter("email");
-        
+
+        System.out.println(selectedMaterials + " " + startDate + " " + endDate + " " + email);
+
         String[] selectedMaterialsArray = selectedMaterials.split(",");
         UsersCtrl usersCtrl = new UsersCtrl();
         User loggedUser = usersCtrl.getLoggedUser(email);
@@ -60,14 +61,14 @@ public class LoanServlet extends HttpServlet {
             req.setAttribute("href", "/dashboard/loan?action=index");
             req.getRequestDispatcher("/components/message.jsp").forward(req, resp);
             return;
-        } else if( hasPendingLoan == -1) {
+        } else if (hasPendingLoan == -1) {
             req.setAttribute("message", "Ha ocurrido un error al verificar si tiene un prestamo activo. Contacte al administrador.");
             req.setAttribute("messageType", "error");
             req.setAttribute("href", "/dashboard/loan?action=index");
             req.getRequestDispatcher("/components/message.jsp").forward(req, resp);
             return;
         }
-        
+
         List<String> notAllowedMaterials = new ArrayList<>();
 
         for (String materialId : selectedMaterialsArray) {
@@ -79,7 +80,8 @@ public class LoanServlet extends HttpServlet {
                 req.setAttribute("href", "/dashboard/loan?action=index");
                 req.getRequestDispatcher("/components/message.jsp").forward(req, resp);
                 return;
-            };
+            }
+            ;
 
             if (response == 1) {
                 notAllowedMaterials.add(materialId);
@@ -103,7 +105,7 @@ public class LoanServlet extends HttpServlet {
         int borrowedMaterials = loanController.getBorrowedMaterialsQuantity(loggedUser.getIdentificationCode());
 
         if (borrowedMaterials + selectedMaterialsArray.length > loggedUser.getAllowedBorrowedMaterials() && !loggedUser.getUserTypeName().equals("Administrador")) {
-            req.setAttribute("message", "Ha sobrepasado el limite de materiales disponibles. " + "Prestamo actual: "+selectedMaterialsArray.length+ ", Otros prestamos:  "+borrowedMaterials);
+            req.setAttribute("message", "Ha sobrepasado el limite de materiales disponibles. " + "Prestamo actual: " + selectedMaterialsArray.length + ", Otros prestamos:  " + borrowedMaterials);
             req.setAttribute("messageType", "error");
             req.setAttribute("href", "/dashboard/loan?action=index");
             req.getRequestDispatcher("/components/message.jsp").forward(req, resp);
@@ -111,21 +113,21 @@ public class LoanServlet extends HttpServlet {
         }
 
         Loan loan = new Loan();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
         loan.setUserId(loggedUser.getIdentificationCode());
-        loan.setStartDate(sdf.format(startDate));
-        loan.setEndDate(sdf.format(endDate));
+        loan.setStartDate(startDate);
+        loan.setEndDate(endDate);
 
         boolean loanResponse = loanController.createLoan(loan);
 
-        if(!loanResponse) {
+        if (!loanResponse) {
             req.setAttribute("message", "Ha ocurrido un error al crear el prestamo. Contacte al administrador.");
             req.setAttribute("messageType", "error");
             req.setAttribute("href", "/dashboard/loan?action=index");
             req.getRequestDispatcher("/components/message.jsp").forward(req, resp);
             return;
-        };
+        }
+        ;
 
         int loanId = loanController.getLatestLoan();
 
