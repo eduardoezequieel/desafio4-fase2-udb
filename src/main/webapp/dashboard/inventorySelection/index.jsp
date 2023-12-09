@@ -20,7 +20,7 @@
                 <a href="">
                     <button type="button" class="selection-button">Creadores</button>
                 </a>
-                <a href="">
+                <a href="${pageContext.request.contextPath}/dashboard/inventorySelection/editorials?action=index">
                     <button type="button" class="selection-button">Editoriales</button>
                 </a>
             </div>
